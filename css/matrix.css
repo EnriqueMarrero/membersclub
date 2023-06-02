@@ -1,0 +1,21 @@
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* This will make sure it stays in the background */
+  }
+
+  body {
+    transition: background-color 0.5s;
+  }
+  
+  body.light {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+  
+  body.dark {
+    background-color: black;
+    color: white;
+  }
+  

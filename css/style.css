@@ -1,0 +1,310 @@
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --btn-background-color: #FB1100;
+  --btn-text-color: #000000;
+  --btn-hover-background-color: #000000;
+  --btn-hover-text-color: #ffffff;
+  --social-icon-color: #FB1100;
+  --social-icon-hover-color: #008CBA;
+  --main-image: url(img/pfp.jpeg);
+}
+
+* {
+  font-weight: bold;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-weight: bold!important;
+}
+
+body.light {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.dark {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --btn-background-color: #000000;
+  --btn-text-color: #ffffff;
+  --btn-hover-background-color: #FB1100;
+  --btn-hover-text-color: #000000;
+  --social-icon-color: #ffffff;
+  --social-icon-hover-color: #000000;
+  --main-image: url(img/pfp-dark.jpeg);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.btn {
+  border: none;
+  color: #000000;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: var(--btn-background-color);
+  color: var(--btn-text-color);
+}
+
+.btn-switch {
+  position: absolute;
+  top: 2%;
+  font-size: 35px;
+  border-radius: 50%;
+}
+
+#toggleBtn {
+  cursor: pointer;
+}
+
+#toggleIcon {
+  transition: transform 0.3s ease;
+}
+
+#toggleIcon.off {
+  transform: rotate(180deg);
+}
+
+.btn:hover {
+  background-color: var(--btn-hover-background-color);
+  color: var(--btn-hover-text-color);
+  color: white;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+#main-image {
+  border-radius: 25px;
+  width: 380px;
+  height: 450px;
+}
+
+#social-media-icons a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#social-media-icons a:hover {
+  color: var(--social-icon-hover-color);
+}
+
+#social-media-icons i {
+  color: var(--social-icon-color);
+  font-size: 2em;
+}
+
+#gallery img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animated-text {
+  font-family: monospace;
+  font-size: 24px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+}
+
+.blink {
+  animation: blink 100ms infinite;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  height: 40px;
+}
+
+.hidden {
+  border-right: .15em solid black;
+}
+
+.card {
+  position: relative;
+  width: 380px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.card__face {
+  position: absolute;
+  width: 380px;
+  height: 450px;
+  border-radius: 25px;
+  backface-visibility: hidden;
+  transition: transform 1s;
+}
+
+.card__face--front {
+  background-color: #bbb;
+}
+
+.card__face--back {
+  background-color: #f85c70;
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped .card__face--front {
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped .card__face--back {
+  transform: rotateY(0);
+}
+
+.pfp {
+  width: 380px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.preloader-half {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  background: #000000;
+  transition: transform 0.5s ease;
+  z-index: 10;
+}
+
+#preloader-top {
+  top: 0;
+}
+
+#preloader-bottom {
+  bottom: 0;
+}
+
+#preloader-top,
+#preloader-bottom {
+  transition: transform 0.5s ease, opacity 0.5s ease 0.5s;
+  opacity: 1;
+}
+
+@keyframes preloaderFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes preloaderSlideOut {
+  from { transform: translateY(0%); }
+  to { transform: translateY(100%); }
+}
+
+#loading-logo-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
+
+#loading-logo {
+  width: 100px;
+  height: 100px;
+  animation: rotation 2s infinite linear;
+}
+
+#preloader {
+  background-color: white;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+#ethereum-logo {
+  width: 100px;
+  height: auto;
+}
+
+.eth-logo-part {
+  fill: black;
+  animation: fill-transition 3s forwards;
+}
+
+@keyframes fill-transition {
+  0% {
+    fill: black;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+#matrix-canvas {
+  position: absolute;
+  z-index: -1;
+}
+
+#loading-text {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.website-update {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+}
+
+.critical {
+  color: red;
+}
